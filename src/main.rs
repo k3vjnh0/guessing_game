@@ -28,17 +28,17 @@ fn main() {
 
         match guess.cmp(&secret_number) {
             Ordering::Less => {
-                println!("{}", "Too small!".yellow());
+                println!("{}", "Too small!".yellow().bold());
                 count += 1;
             }
             Ordering::Greater => {
-                println!("{}", "Too big!".red());
+                println!("{}", "Too big!".red().bold());
                 count += 1;
             }
             Ordering::Equal => {
-                println!("{}", "You win!".green());
+                println!("{}", "You win!".green().bold());
                 count += 1;
-                println!("You guessed in {} times.", count);
+                println!("You guessed in {} times.", count.to_string().blue().bold());
                 break;
             }
         }
